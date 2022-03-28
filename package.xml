@@ -13,6 +13,8 @@
 
   <author email="karsten@osrfoundation.org">Karsten Knese</author>
 
+  <replace>rcutils</replace>
+
   <buildtool_depend>ament_cmake_ros</buildtool_depend>
   <buildtool_depend>python3-empy</buildtool_depend>
 
