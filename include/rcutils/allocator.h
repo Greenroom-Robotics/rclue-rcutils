@@ -108,6 +108,21 @@ RCUTILS_WARN_UNUSED
 rcutils_allocator_t
 rcutils_get_default_allocator(void);
 
+/// Override the default allocator returned by rcutils_get_default_allocator.
+/**
+ * Attribute          | Adherence
+ * ------------------ | -------------
+ * Allocates Memory   | No
+ * Thread-Safe        | No
+ * Uses Atomics       | No
+ * Lock-Free          | Yes
+ *
+ * \param[in] override_allocator The allocator to set as the default.
+ */
+RCUTILS_PUBLIC
+void
+rcutils_set_default_allocator(rcutils_allocator_t override_allocator);
+
 /// Return true if the given allocator has non-null function pointers.
 /**
  * \param[in] allocator to be checked by the function
