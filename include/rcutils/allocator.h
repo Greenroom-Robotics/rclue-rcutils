@@ -108,6 +108,10 @@ RCUTILS_WARN_UNUSED
 rcutils_allocator_t
 rcutils_get_default_allocator(void);
 
+RCUTILS_PUBLIC
+void
+rcutils_set_default_allocator(rcutils_allocator_t override_allocator);
+
 /// Return true if the given allocator has non-null function pointers.
 /**
  * \param[in] allocator to be checked by the function
