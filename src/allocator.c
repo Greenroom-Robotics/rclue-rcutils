@@ -75,9 +75,23 @@ rcutils_get_zero_initialized_allocator(void)
   return zero_allocator;
 }
 
+// have the ability to override the default allocator
+static rcutils_allocator_t
+rcutils_override_default_allocator;
+
+void
+rcutils_set_default_allocator(rcutils_allocator_t override_allocator)
+{
+  if (rcutils_allocator_is_valid(&override_allocator))
+    rcutils_override_default_allocator = override_allocator;
+}
+
 rcutils_allocator_t
 rcutils_get_default_allocator(void)
 {
+  if (rcutils_allocator_is_valid(&rcutils_override_default_allocator))
+    return rcutils_override_default_allocator;
+
   static rcutils_allocator_t default_allocator = {
     .allocate = __default_allocate,
     .deallocate = __default_deallocate,
@@ -85,6 +99,7 @@ rcutils_get_default_allocator(void)
     .zero_allocate = __default_zero_allocate,
     .state = NULL,
   };
+
   return default_allocator;
 }
 
