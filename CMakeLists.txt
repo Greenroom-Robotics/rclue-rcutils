@@ -158,6 +158,8 @@ install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin)
 
+set(BUILD_TESTING OFF)
+
 if(BUILD_TESTING)
   find_package(performance_test_fixture REQUIRED)
 
