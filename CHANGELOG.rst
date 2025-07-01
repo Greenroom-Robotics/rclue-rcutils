@@ -2,8 +2,8 @@
 Changelog for package rcutils
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+7.0.0 (2025-07-01)
+------------------
 * Hand-code logging_macros.h (`#502 <https://github.com/ros2/rcutils/issues/502>`_)
 * Implement rcutils_strnlen. (`#430 <https://github.com/ros2/rcutils/issues/430>`_)
 * Contributors: Andrei Kholodnyi, Chris Lalancette
